@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  grafana:
+    image: hansehe/grafana-dev-blog:${VERSION}
+    hostname: grafana
+    build:
+      context: ./grafana
+      dockerfile: Dockerfile
+    networks:
+      - backend_network
+    # ports:
+    #     - 3002:3000
+
+networks:
+  backend_network:
+    external: true

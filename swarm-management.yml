@@ -1,0 +1,20 @@
+configs:
+    site.key: ${SECRETS_FOLDER}/site.key
+    site.crt: ${SECRETS_FOLDER}/site.crt
+
+networks: 
+    backend_network:
+        encrypted: true
+
+volumes:
+    portainer_data:
+
+stacks:
+    portainer: docker-compose.portainer.yml
+    cadvisor: docker-compose.cadvisor.yml
+    prometheus: docker-compose.prometheus.yml
+    grafana: docker-compose.grafana.yml
+    nginx: docker-compose.nginx.yml
+    nginx_exporter: docker-compose.nginx-exporter.yml
+    rabbitmq: docker-compose.rabbitmq.yml
+    rabbitmq_exporter: docker-compose.rabbitmq-exporter.yml

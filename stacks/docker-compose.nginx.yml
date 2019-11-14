@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  nginx:
+    image: nginx
+    networks:
+      - backend_network
+    ports:
+      - 8080:80
+
+networks:
+  backend_network:
+    external: true
